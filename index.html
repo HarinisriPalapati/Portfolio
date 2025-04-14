@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harinisri</title>
+
+    <script src="https://kit.fontawesome.com/5eb2c51ffb.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="skill.css" />
+    <link rel="stylesheet" href="education.css" />
+    <link rel="stylesheet" href="certification.css" />
+</head>
+
+<body>
+    <nav id="navbar" class="nav">
+        <ul>
+            <li>
+                <a href="#welcome-section">Home</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+              <a href="#certifications">Certification</a>
+          </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#projects">Project</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        const nameText = "Hey I'm Harinisri";
+        const roles = ["Full Stack Developer",  "Java Programmer","SQL Developer"];
+        
+        let roleIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+      
+        function typeRole() {
+          const roleSpan = document.getElementById("role");
+          const currentRole = roles[roleIndex];
+      
+          if (!deleting) {
+            roleSpan.innerHTML = currentRole.substring(0, charIndex + 1);
+            charIndex++;
+      
+            if (charIndex === currentRole.length) {
+              deleting = true;
+              setTimeout(typeRole, 1500); // Pause before deleting
+              return;
+            }
+          } else {
+            roleSpan.innerHTML = currentRole.substring(0, charIndex - 1);
+            charIndex--;
+      
+            if (charIndex === 0) {
+              deleting = false;
+              roleIndex = (roleIndex + 1) % roles.length;
+            }
+          }
+      
+          setTimeout(typeRole, deleting ? 50 : 100); // Speed up delete
+        }
+      
+        window.onload = function () {
+          document.getElementById("name").textContent = nameText;
+          typeRole();
+        };
+      </script>
+      
+
+    <!-- Second Section-->
+
+    <section id="welcome-section">
+        <h1><span id="name"></span></h1>
+        <h1><p><i><span id="role"></span></i></p></h1>
+      </section>
+      
+      
+
+    <section id="about" class="about-section">
+        <div class="about-image">
+          <img src="Image/my pic.jpg" alt="Profile Picture" />
+          <link rel="stylesheet" href="about.css" />
+
+        </div>
+        <div class="about-content">
+          <h2>About Me</h2>
+          <p>
+            Hi! I'm Harinisri, Passionate and detail-oriented Frontend Developer with a strong foundation in Java Full Stack Development, and responsive design. 
+            Skilled in HTML, CSS, JavaScript, and modern frameworks, with hands-on experience building user-friendly web applications.
+            Adept at collaborating in agile environments, solving complex problems, and delivering clean, maintainable code. 
+            Eager to contribute to innovative projects and grow within a dynamic tech team.          </p>
+        </div>
+
+        <div class="about-buttons">
+            <a href="Harinisri-- Resume.pdf" class="btn" download>Download Resume</a>
+            <a href="#contact" class="btn btn-outline"><B>Contact Me</B></a>
+          </div>
+        </div>
+      </section>
+
+
+
+<!-- Education Section -->
+<section id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="education-cards">
+      <div class="education-item">
+        <div class="edu-left">
+          <h3>B.Tech in Computer Science & Engineering</h3>
+          <p>Sree Vahini Institute of Science and Technology</p>
+          <p><strong>CGPA:</strong> 7.61/10</p>
+        </div>
+        <div class="edu-right">
+          <span>2020 – 2024</span>
+        </div>
+      </div>
+  
+      <div class="education-item">
+        <div class="edu-left">
+          <h3>Intermediate (MPC)</h3>
+          <p>Vishista Junior College</p>
+          <p><strong>CGPA:</strong> 7.56/10</p>
+        </div>
+        <div class="edu-right">
+          <span>2018 – 2020</span>
+        </div>
+      </div>
+  
+      <div class="education-item">
+        <div class="edu-left">
+          <h3>SSC (10th Class)</h3>
+          <p>Z.P.H.S High School</p>
+          <p><strong>CGPA:</strong> 8.7/10</p>
+        </div>
+        <div class="edu-right">
+          <span>2018</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--certification-->
+  <section id="certifications">
+    <h2 class="section1-title">Certifications</h2>
+    <div class="certification-cards">
+      <div class="cert-item">
+        <h3>Java Full Stack Development</h3>
+        <p>Issued by Codegnan</p>
+        <div class="cert-buttons">
+          <a href="cert/Harini Sri certificate.pdf" class="btn" target="_blank">View Certificate</a>
+        </div>
+      </div>
+      
+      <div class="cert-item">
+        <h3>AWS Internship</h3>
+        <p>Issued by BrainOvision Solutions Pvt. Ltd</p>
+        <div class="cert-buttons">
+          <a href="cert/AMAZON WEB SERVICES INTERNSHIP CERTIFICATE.pdf" class="btn" target="_blank">View Certificate</a>
+        </div>
+      </div>
+      
+      <div class="cert-item">
+        <h3>Cybersecurity Virtual Internship</h3>
+        <p>Issued by Palo Alto Support</p>
+        <div class="cert-buttons">
+          <a href="cert/fainal eduskill.pdf" class="btn" target="_blank">View Certificate</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  
+  
+    <!-- Skills Section -->
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-links">
+      <div class="skill-item">
+
+        <img src="icons/html.png" alt="HTML" class="skill-img"  />
+        <span>HTML</span>
+      </div>
+      <div class="skill-item">
+        <img src="icons/css3.png" alt="CSS" class="skill-img"  />
+        <span>CSS</span>
+      </div>
+      <div class="skill-item">
+        <img src="icons/js.png" alt="JavaScript" class="skill-img"  />
+        <span>JavaScript</span>
+      </div>
+      <div class="skill-item">
+        <img src="icons/java.png" alt="Java" class="skill-img"  />
+        <span>Java</span>
+      </div>
+      <div class="skill-item">
+        <img src="icons/react.png" alt="React" class="skill-img"  />
+        <span>React</span>
+      </div>
+      <div class="skill-item">
+        <img src="icons/git.png" alt="GitHub" class="skill-img"  />
+        <span>GitHub</span>
+      </div>
+      <div class="skill-item">
+        <img src="icons/sql.png" alt="SQL" class="skill-img"  />
+        <span>SQL</span>
+      </div>
+    </div>
+  </section>
+
+    <section id="projects" class="project-section">
+        <h2 class="projects-section-header">My Project's</h2>
+
+        <div class="projects-grid">
+            <a href="https://codepen.io/MadanSinha/full/MWgjyKm" target="_blank" class="project project-tile">
+                <img class="project-image"
+                    src="https://github.com/lazy4gyan/project_pic/blob/main/photography.jpg?raw=true" alt="project" />
+                <p class="project-title">
+
+                    Photography Page
+
+                </p>
+            </a>
+
+            <a href="https://codepen.io/MadanSinha/full/eYdXzme" target="_blank" class="project project-tile">
+                <img class="project-image"
+                    src="https://github.com/lazy4gyan/project_pic/blob/main/SimpleQuote%20Generator.jpg?raw=true"
+                    alt="project" />
+                <p class="project-title">
+
+                    Random Quote Machine
+
+                </p>
+            </a>
+
+            <a href="https://codepen.io/MadanSinha/full/poEQpzM" target="_blank" class="project project-tile">
+                <img class="project-image"
+                    src="https://github.com/lazy4gyan/project_pic/blob/main/LandingPage.jpg?raw=true" alt="project" />
+                <p class="project-title">
+
+                    Landing Page
+
+                </p>
+            </a>
+
+            <a href="https://codepen.io/MadanSinha/full/MWjPYae" target="_blank" class="project project-tile">
+                <img class="project-image"
+                    src="https://github.com/lazy4gyan/project_pic/blob/main/survey%20f.jpg?raw=true" alt="project" />
+                <p class="project-title">
+
+                    Survey Form
+
+                </p>
+            </a>
+
+            <a href="https://codepen.io/MadanSinha/full/bGwxqed" target="_blank" class="project project-tile">
+                <img class="project-image" src="https://github.com/lazy4gyan/project_pic/blob/main/tribute.jpg?raw=true"
+                    alt="project" />
+                <p class="project-title">
+
+                    Tribute Page
+
+                </p>
+            </a>
+
+            <a href="https://codepen.io/MadanSinha/full/dybNMze" target="_blank" class="project project-tile">
+                <img class="project-image"
+                    src="https://github.com/lazy4gyan/project_pic/blob/main/3d%20cube.jpg?raw=true" alt="project" />
+                <p class="project-title">
+
+                    3D Cube
+
+                </p>
+            </a>
+
+            <a href="https://cfxbu9.csb.app/" target="_blank" class="project project-tile">
+                <img class="project-image"
+                    src="https://github.com/lazy4gyan/Frontend-Practice/blob/main/travel-journal.png?raw=true"
+                    alt="project" />
+                <p class="project-title">
+
+                    Travel Journal using React
+
+                </p>
+            </a>
+
+            <a href="https://8y90ff.csb.app/" target="_blank" class="project project-tile">
+                <img class="project-image"
+                    src="https://github.com/lazy4gyan/Huddle-landing-page/blob/main/design/random.png?raw=true"
+                    alt="project" />
+                <p class="project-title">
+
+                    Random Picture in React by Unsplash API
+
+                </p>
+            </a>
+            <a href="https://osly2x.csb.app/" target="_blank" class="project project-tile">
+                <img class="project-image"
+                    src="https://github.com/lazy4gyan/Frontend-Practice/blob/main/randomquote.png?raw=true"
+                    alt="project" />
+                <p class="project-title">
+
+                    Random Quote using React
+
+                </p>
+            </a>
+
+            <a href="https://moonlit-nougat-ab6465.netlify.app" target="_blank" class="project project-tile">
+                <img class="project-image"
+                    src="https://github.com/lazy4gyan/Huddle-landing-page/blob/main/design/huddle.png?raw=true"
+                    alt="project" />
+                <p class="project-title">
+
+                    Huddle landing page
+
+                </p>
+            </a>
+
+            <a href="https://62430ce3085a210baf9a1f20--lazygyan-3column-preview-card.netlify.app/" target="_blank"
+                class="project project-tile">
+                <img class="project-image"
+                    src="https://github.com/lazy4gyan/3-Column-Preview-Card/blob/main/design/desktop-design.jpg?raw=true"
+                    alt="project" />
+                <p class="project-title">
+
+                    3 Column Preview Card
+
+                </p>
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+    
+  
+      
+
+    <!-- Third Section-->
+
+
+    <section id="contact" class="contact-section">
+        <div class="contact-section-header">
+            <h2 id="con">Let's work together...</h2>
+            <p>How do you take your coffee?</p>
+        </div>
+        <!--<div class="form">
+            <form id="form" action="mailto:palapatiharinisri@gmail.com" method="POST" enctype="text/plain">
+              <input type="email" id="email" placeholder="Your Email Address" name="email" required /><br>
+              <input type="submit" value="Send" class="btn contact-submit" />
+            </form>
+          </div>-->
+          
+        <div class="contact-links">
+            <!-- Email via LinkedIn Icon -->
+            <a href="mailto:palapatiharinisri@gmail.com" class="btn contact-details">
+                <img src="Image/email.png" alt="Send Email" width="23" height="23">
+            </a>
+  
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/your-profile-link" target="_blank" class="btn contact-details">
+              <img src="Image/Linkedin.jpeg" alt="LinkedIn"  width="24" height="24">
+            </a>
+          
+            <!-- Code360 -->
+            <a href="https://www.naukri.com/code360/profile/2fcc227a-bd78-4f5c-bc5c-31b835b5b578" target="_blank" class="btn contact-details">
+                <img src="Image/code360.png" alt="Code360" width="24" height="24" style="vertical-align: middle;">
+            </a>
+          
+            <!-- GitHub with Logo Image -->
+            <a id="profile-link" href="https://github.com/HarinisriPalapati" target="_blank" class="btn contact-details">
+                <img src="Image/git.png" alt="GitHub" class="contact-logo" width="24" height="24"/>
+            </a>
+  
+          
+            <!-- Naukri -->
+            <a href="https://www.naukri.com/mnjuser/profile?id=&altresid" target="_blank" class="btn contact-details">
+                <img src="Image/naukri.png" alt="Naukri" class="social-img" width="24" height="24"/>
+            </a>
+  
+          
+            <!-- Phone / Contact -->
+            <a href="tel:+919948161924" class="btn contact-details">
+                <img src="Image/phone.png" alt="Phone" class="social-img" width="24" height="24"/>
+            </a>
+          </div>
+          
+    </section>
+
+    <!-- END CONTACT SECTION -->
+
+    <!-- START FOOTER SECTION -->
+
+    <footer id="contact1">
+      <div class="footer-content1">
+        <p><strong>Contact:</strong><a href="tel:+919948161924">+91-9948161924</a></p>
+        <p><strong>Email:</strong><a href="mailto:palapatiharinisri@gmail.com">palapatiharinisri@gmail.com</a></p>
+        &copy; 2024, Made with ❤ by Harinisri
+      </div>
+    </footer>
+    
+
+    <!-- END FOOTER SECTION -->
+
+</body>
+
+</html>
